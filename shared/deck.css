@@ -33,6 +33,7 @@
   .directory-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; }
   .deck-card{ display:flex; flex-direction:column; gap:18px; min-height:250px; padding:28px; border:1px solid var(--line); border-radius:22px; background:#fff; color:var(--ink); text-decoration:none; box-shadow:var(--shadow-sm); transition:transform .35s var(--ease), box-shadow .35s var(--ease); }
   .deck-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .deck-card.guide-card{ background:var(--yellow-wash); border-color:rgba(242,189,18,.42); }
   .deck-card h2{ font-size:28px; line-height:1.08; letter-spacing:-.02em; }
   .deck-card p{ color:var(--muted); font-size:15px; line-height:1.6; }
   .deck-card .meta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; }
