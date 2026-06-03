@@ -90,17 +90,18 @@
   .arrow{ color:var(--ink); font-size:24px; font-family:var(--mono); font-weight:500; opacity:.4; }
   .col{ display:flex; flex-direction:column; gap:14px; }
 
-  .plan-map{ display:grid; grid-template-columns:.92fr 1.15fr 1.15fr; gap:18px; align-items:stretch; margin-top:38px; }
-  .plan-stage{ border-radius:20px; padding:24px; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-sm); position:relative; min-height:190px; }
+  .plan-map{ display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:stretch; margin-top:38px; max-width:1040px; }
+  .plan-stage{ border-radius:20px; padding:28px; background:#fff; border:1px solid var(--line); box-shadow:var(--shadow-sm); position:relative; min-height:260px; }
   .plan-stage.dark{ background:var(--ink); color:#fff; }
   .plan-stage.dark p{ color:#d8d3ce; }
   .plan-stage:after{ content:""; position:absolute; top:50%; right:-16px; width:32px; height:3px; background:var(--yellow); border-radius:3px; }
   .plan-stage:last-child:after{ display:none; }
   .plan-stage .tag{ margin-bottom:18px; }
-  .plan-stage h3{ font-size:24px; font-weight:800; letter-spacing:-.015em; margin-bottom:10px; }
+  .plan-stage h3{ font-size:28px; font-weight:800; letter-spacing:-.015em; margin-bottom:10px; }
   .plan-stage p{ color:var(--muted); font-size:15px; line-height:1.55; }
   .mini-list{ display:grid; gap:10px; margin-top:14px; }
   .mini-list span{ display:block; background:var(--yellow-wash); border:1px solid rgba(242,189,18,.42); border-radius:12px; padding:10px 12px; font-size:13px; font-weight:700; }
+  .plan-stage.dark .mini-list span{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); color:#fff; }
 
   .grid{ display:grid; gap:18px; margin-top:34px; }
   .g2{ grid-template-columns:repeat(2,1fr); } .g3{ grid-template-columns:repeat(3,1fr); }
@@ -332,28 +333,23 @@
   <!-- 9 DEFINITION -->
   <section class="slide" data-sec="Planning">
     <div class="wrap">
-      <div class="kicker" data-r="1">definition / planning</div>
-      <h2 class="head" data-r="2">Two jobs before<br><span class="hl">any code.</span></h2>
+      <div class="kicker" data-r="1">before implementation</div>
+      <h2 class="head" data-r="2">Definition first.<br><span class="hl">Planning second.</span></h2>
       <div class="plan-map" data-r="3">
         <div class="plan-stage dark">
-          <div class="tag">starting point</div>
-          <h3>Define the work</h3>
-          <p>Name the outcome, constraints, risks, and the part of the system we are changing.</p>
+          <div class="tag">definition</div>
+          <h3>Decide what we are building</h3>
+          <p>Name the outcome, the user or business problem, the constraints, and the part of the system we are changing.</p>
+          <div class="mini-list"><span>success criteria</span><span>scope boundaries</span><span>known risks</span></div>
         </div>
         <div class="plan-stage">
-          <div class="tag">context</div>
-          <h3>Load reality</h3>
-          <p>Bring in the facts the agent cannot infer from the repo alone.</p>
-          <div class="mini-list"><span>docs and decisions</span><span>customer / product context</span></div>
-        </div>
-        <div class="plan-stage">
-          <div class="tag">grill me</div>
-          <h3>Pressure-test</h3>
-          <p>Let the agent challenge gaps, edge cases, terminology, and code-structure assumptions.</p>
-          <div class="mini-list"><span>open questions</span><span>sharper plan</span></div>
+          <div class="tag">planning</div>
+          <h3>Prepare the agent to build it</h3>
+          <p>Load the context it cannot infer, then pressure-test the approach until the plan is specific enough to execute.</p>
+          <div class="mini-list"><span>docs, decisions, and product context</span><span>grill gaps, edge cases, and terminology</span><span>small vertical slices</span></div>
         </div>
       </div>
-      <p class="foot" data-r="5"><b>Context</b> feeds the agent. <b>Grilling</b> sharpens you. Do both before writing a line.</p>
+      <p class="foot" data-r="5"><b>Definition</b> clarifies intent. <b>Planning</b> turns that intent into context, questions, and executable slices.</p>
     </div>
   </section>
 
@@ -528,24 +524,13 @@
     </div>
   </section>
 
-  <!-- 18 SECTION PARALLEL -->
-  <section class="slide" data-sec="Acceleration">
-    <div class="wrap two">
-      <div>
-        <div class="sec-num-lbl" data-r="1">EXTENSION</div>
-        <h2 class="head tight" data-r="2"><span class="hl">Parallelize.</span></h2>
-        <p class="lede" data-r="3">Once the core loop is working, clean vertical slices let one engineer run several agents at once without them stepping on each other.</p>
-      </div>
-      <div class="big-icon" data-r="4"><svg viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="78" fill="var(--yellow)" opacity=".28"/><circle cx="76" cy="58" r="20" fill="#fff" stroke="var(--ink)" stroke-width="8"/><circle cx="76" cy="120" r="20" fill="#fff" stroke="var(--ink)" stroke-width="8"/><circle cx="76" cy="182" r="20" fill="#fff" stroke="var(--ink)" stroke-width="8"/><circle cx="166" cy="58" r="20" fill="var(--yellow)" stroke="var(--ink)" stroke-width="8"/><circle cx="166" cy="120" r="20" fill="var(--yellow)" stroke="var(--ink)" stroke-width="8"/><circle cx="166" cy="182" r="20" fill="var(--yellow)" stroke="var(--ink)" stroke-width="8"/><path d="M96 58h44M96 120h44M96 182h44" fill="none" stroke="var(--ink)" stroke-width="8" stroke-linecap="round"/><path d="M76 78v24M76 140v22M166 78v24M166 140v22" fill="none" stroke="var(--yellow-deep)" stroke-width="8" stroke-linecap="round"/><path d="M76 120c36 0 54-58 86-58M76 120c36 0 54 58 86 58" fill="none" stroke="var(--ink)" stroke-width="7" stroke-linecap="round" opacity=".22"/></svg></div>
-    </div>
-  </section>
-
-  <!-- 19 CONDUCTOR + CLOSE -->
+  <!-- 18 CONDUCTOR + WORKTREES -->
   <section class="slide" data-sec="Acceleration">
     <div class="wrap">
-      <div class="kicker" data-r="1">conductor + worktrees</div>
+      <div class="kicker" data-r="1">extension · conductor + worktrees</div>
       <h2 class="head" data-r="2">One engineer,<br><span class="hl">many agents.</span></h2>
-      <div class="flow" data-r="3">
+      <p class="lede" data-r="3">Parallelization is not a final stage. It is an accelerator once the core loop is working and the work can be split into clean vertical slices.</p>
+      <div class="flow" data-r="4">
         <div class="node" style="min-width:155px">Conductor<small>you orchestrate</small></div><span class="arrow">→</span>
         <div class="col">
           <div class="node dark">Worktree · feature A</div>
@@ -553,15 +538,16 @@
           <div class="node dark">Worktree · bugfix C</div>
         </div>
       </div>
-      <div class="grid g2" style="margin-top:34px">
-        <div class="cardx tint" data-r="4"><div class="tag">git worktrees</div><h3>Isolated by design</h3><p>Each agent gets its own checkout of the same repo. Parallel branches, zero collisions, one shared history.</p></div>
-        <div class="cardx dark" data-r="5"><div class="tag">the payoff</div><h3>Throughput without chaos</h3><p>Clean slices + isolated worktrees + tight feedback loops = scale work, not risk.</p></div>
+      <div class="grid g3" style="margin-top:30px">
+        <div class="cardx tint" data-r="5"><div class="tag">use it when</div><h3>Slices are independent</h3><p>Run agents in parallel only when each task can move without blocking or rewriting another task.</p></div>
+        <div class="cardx" data-r="6"><div class="tag">git worktrees</div><h3>Isolated by design</h3><p>Each agent gets its own checkout of the same repo. Parallel branches, zero collisions, one shared history.</p></div>
+        <div class="cardx dark" data-r="7"><div class="tag">the payoff</div><h3>Throughput without chaos</h3><p>Clean slices + isolated worktrees + tight feedback loops = scale work, not risk.</p></div>
       </div>
-      <p class="foot" data-r="6"><b>Direct, don't type.</b> Humans own intent and verification — agents do the rest.</p>
+      <p class="foot" data-r="7"><b>Direct, don't type.</b> Humans own intent and verification — agents do the rest.</p>
     </div>
   </section>
 
-  <!-- 20 GUIDELINES -->
+  <!-- 19 GUIDELINES -->
   <section class="slide" data-sec="Acceleration">
     <div class="wrap">
       <div class="kicker" data-r="1">one more thing...</div>
@@ -575,7 +561,7 @@
     </div>
   </section>
 
-  <!-- 21 THANK YOU -->
+  <!-- 20 THANK YOU -->
   <section class="slide closing" data-sec="Close">
     <div class="wrap">
       <div class="kicker" data-r="1">Homeaglow Offsite · June 2026</div>
