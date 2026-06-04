@@ -229,6 +229,7 @@
   @page{ size:16in 9in landscape; margin:0; }
   @media print{
     *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    *,*::before,*::after{ animation:none !important; box-shadow:none !important; filter:none !important; text-shadow:none !important; transition:none !important; }
     html,body{ width:100%; height:auto; overflow:visible; background:#fff; }
     .bg,.topbar,.counter,.bar,.rail,.hint,.print-button{ display:none !important; }
     #deck{ display:block; width:100%; }
