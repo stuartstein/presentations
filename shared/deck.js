@@ -5,12 +5,25 @@
   const secLabel = document.getElementById('secLabel');
   const hint = document.getElementById('hint');
   const rail = document.getElementById('rail');
+  const deck = document.getElementById('deck');
   let i = 0;
   tot.textContent = String(slides.length).padStart(2,'0');
 
   slides.forEach((s,idx)=>{ const b=document.createElement('button'); b.title='Slide '+(idx+1);
     b.addEventListener('click',e=>{e.stopPropagation(); show(idx);}); rail.appendChild(b); });
   const dots = Array.from(rail.children);
+
+  const printButton = document.createElement('button');
+  printButton.type = 'button';
+  printButton.className = 'print-button';
+  printButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v7H6z"/><path d="M18 12h.01"/></svg><span>Print PDF</span>';
+  printButton.addEventListener('click', e => {
+    e.stopPropagation();
+    document.body.classList.add('print-ready');
+    window.print();
+  });
+  window.addEventListener('afterprint', () => document.body.classList.remove('print-ready'));
+  if(deck) document.body.insertBefore(printButton, deck);
 
   /* typing animation */
   const typeEl = document.getElementById('typeword');

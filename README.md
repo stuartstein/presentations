@@ -30,3 +30,7 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000/`.
+
+## Printing To PDF
+
+Open a deck and use the top-right "Print PDF" button. In the browser print dialog, choose "Save as PDF"; the shared print stylesheet renders each slide as one 16:9 landscape page.
