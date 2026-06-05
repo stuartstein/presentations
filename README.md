@@ -14,6 +14,7 @@ Static GitHub Pages site for Homeaglow presentation decks.
 ## Current Decks
 
 - `presentations/agentic-coding-hag-2026/` — Agentic Coding, Homeaglow offsite June 2026.
+- `presentations/claude-on-a-schedule-hag-2026/` — Claude on a Schedule (recurring prompts), Homeaglow offsite June 2026.
 
 ## Creating A New Deck With An Agent
 

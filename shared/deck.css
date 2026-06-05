@@ -189,6 +189,13 @@
   .tickets{ display:flex; flex-direction:column; gap:9px; }
   .ticket{ background:var(--yellow-wash); border:1px solid var(--line); border-left:5px solid var(--yellow); border-radius:12px; padding:11px 16px; font-weight:600; font-size:14px; box-shadow:var(--shadow-sm); }
 
+  /* prompt / brief block */
+  .promptbox{ position:relative; margin-top:30px; max-width:940px; background:#fff; border:1px solid var(--line); border-left:5px solid var(--yellow); border-radius:18px; padding:24px 30px 26px; box-shadow:var(--shadow-sm); }
+  .promptbox .tag{ margin-bottom:16px; }
+  .promptbox p{ color:var(--ink-2); font-size:clamp(13.5px,1.32vw,16px); line-height:1.62; margin:0; }
+  .promptbox p + p{ margin-top:9px; }
+  .promptbox p.key{ color:var(--ink); font-weight:700; }
+
   .skill-link{ display:inline-flex; align-items:center; gap:8px; margin-top:20px; color:var(--ink); text-decoration:none; font-family:var(--mono); font-size:12px; letter-spacing:.04em; background:#fff; border:1px solid var(--line); border-radius:100px; padding:10px 14px; box-shadow:var(--shadow-sm); }
   .skill-link:after{ content:"↗"; color:var(--yellow-deep); font-weight:700; }
 

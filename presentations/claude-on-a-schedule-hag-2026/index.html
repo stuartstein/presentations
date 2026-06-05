@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Claude on a Schedule — recurring prompts deck -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<title>Claude on a Schedule — Recurring Prompts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="../../shared/deck.css" />
+</head>
+<body class="deck-page">
+
+<div class="bg">
+  <div class="wash w1"></div><div class="wash w2"></div>
+  <svg class="spark" style="left:13%;top:20%;width:26px;height:26px;fill:var(--yellow);animation-delay:0s" viewBox="0 0 24 24"><path d="M12 0c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 24c-.6-6.6-5.4-11.4-11.4-12C6.6 11.4 11.4 6 12 0z"/></svg>
+  <svg class="spark" style="right:16%;top:26%;width:18px;height:18px;fill:var(--ink);animation-delay:1.5s" viewBox="0 0 24 24"><path d="M12 0c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 24c-.6-6.6-5.4-11.4-11.4-12C6.6 11.4 11.4 6 12 0z"/></svg>
+  <svg class="spark" style="right:29%;bottom:19%;width:22px;height:22px;fill:var(--yellow);animation-delay:2.7s" viewBox="0 0 24 24"><path d="M12 0c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 24c-.6-6.6-5.4-11.4-11.4-12C6.6 11.4 11.4 6 12 0z"/></svg>
+  <svg class="spark" style="left:22%;bottom:23%;width:15px;height:15px;fill:var(--faint);animation-delay:3.6s" viewBox="0 0 24 24"><path d="M12 0c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 24c-.6-6.6-5.4-11.4-11.4-12C6.6 11.4 11.4 6 12 0z"/></svg>
+</div>
+
+<div class="topbar">
+  <div class="brand"><span class="mark"><svg viewBox="0 0 24 24" fill="#1B1A1A"><path d="M12 1c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 23c-.6-5.6-5.4-10.4-11.4-11C6.6 11.4 11.4 6 12 1z"/></svg></span> Claude on a Schedule</div>
+  <div class="pill-sec" id="secLabel">Open</div>
+</div>
+<div class="counter"><b id="cur">01</b> / <span id="tot">15</span></div>
+<div class="bar" id="bar"></div>
+<div class="rail" id="rail"></div>
+<div class="hint" id="hint"><kbd>←</kbd><kbd>→</kbd> navigate · click anywhere</div>
+
+<div id="deck">
+
+  <!-- 1 TITLE -->
+  <section class="slide active" data-sec="Open">
+    <div class="wrap">
+      <div class="kicker" data-r="1"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1c.6 6 5.4 10.8 11.4 11.4C17.4 12.6 12.6 17.4 12 23c-.6-5.6-5.4-10.4-11.4-11C6.6 11.4 11.4 6 12 1z"/></svg> an extension · how to use claude</div>
+      <h1 class="title" data-r="2">Claude, on a<br><span class="hl" id="typeword">schedule.</span></h1>
+      <p class="lede" data-r="3">A deep dive on recurring prompts: turning a one-off ask into a routine that runs every day — and reports back before you think to check.</p>
+    </div>
+  </section>
+
+  <!-- 2 THE SHIFT -->
+  <section class="slide" data-sec="Open">
+    <div class="wrap">
+      <div class="kicker" data-r="1">why now</div>
+      <h2 class="head" data-r="2">From a chat you open<br>to a job that <span class="hl">runs.</span></h2>
+      <p class="lede" data-r="3">We started by texting a chatbot. Now that Claude is wired into our tools — Slack, Notion, Metabase — the next move is obvious: prompts we want to run on a regular beat.</p>
+      <div class="chips" data-r="4">
+        <span class="chip">every week</span>
+        <span class="chip">every day</span>
+        <span class="chip">every hour</span>
+        <span class="chip">even every minute</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 USE CASES -->
+  <section class="slide" data-sec="Open">
+    <div class="wrap">
+      <div class="kicker" data-r="1">what it unlocks</div>
+      <h2 class="head" data-r="2">Put the recurring parts<br>on a <span class="hl">timer.</span></h2>
+      <div class="grid g2">
+        <div class="cardx" data-r="3"><div class="tag">daily</div><h3>Draft your standup</h3><p>Wake up to a first draft of what you did and what's next, already written.</p></div>
+        <div class="cardx tint" data-r="4"><div class="tag">morning</div><h3>Triage your inbox</h3><p>Sort what came in overnight against what you're actually working on.</p></div>
+        <div class="cardx" data-r="5"><div class="tag">hourly</div><h3>Monitor a metric</h3><p>Watch a number and ping you only when something moves enough to matter.</p></div>
+        <div class="cardx" data-r="6"><div class="tag">recurring</div><h3>Summarize the news</h3><p>A tight briefing on your space, delivered before the first meeting.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 TWO WAYS TO SCHEDULE -->
+  <section class="slide" data-sec="Schedule">
+    <div class="wrap">
+      <div class="kicker" data-r="1">the easy part</div>
+      <h2 class="head" data-r="2">Two ways to <span class="hl">schedule it.</span></h2>
+      <div class="grid g2">
+        <div class="cardx" data-r="3">
+          <div class="tag">Cowork · Scheduled Task</div>
+          <h3>Runs on your machine</h3>
+          <p>It can reach your local files. The catch: it needs your laptop awake and the Claude desktop app open. The app can keep your computer from sleeping to fire the prompt — or it queues the run for next time you log in.</p>
+        </div>
+        <div class="cardx dark" data-r="4">
+          <div class="tag">Claude Code · Routine</div>
+          <h3>Runs in the cloud</h3>
+          <p>It lives on Anthropic's servers, so your computer can be closed and it still runs. The trade-off: it can't touch anything on your local machine, and there may be a cap on how many you can run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 WHICH TO USE -->
+  <section class="slide" data-sec="Schedule">
+    <div class="wrap">
+      <div class="kicker" data-r="1">which one</div>
+      <h2 class="head" data-r="2">Local for <span class="hl">you,</span><br>cloud for the <span class="hl">team.</span></h2>
+      <div class="grid g2">
+        <div class="cardx tint" data-r="3"><div class="tag">non-critical</div><h3>Personal &amp; low-stakes</h3><p>I run these as Scheduled Tasks in Cowork. If a run slips because my laptop was closed, no harm done.</p></div>
+        <div class="cardx dark" data-r="4"><div class="tag">must run</div><h3>Team-facing output</h3><p>Anything that posts to the team belongs in a cloud Routine, so it fires at the same time whether or not my laptop is open.</p></div>
+      </div>
+      <p class="foot" data-r="5"><b>Either way, the shape is the same</b> — you give it a title, instructions to run, and a cadence.</p>
+    </div>
+  </section>
+
+  <!-- 6 PIVOT: THE PROMPT IS THE CRAFT -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">the hard part</div>
+      <h2 class="head" data-r="2">Scheduling is easy.<br>The prompt is the <span class="hl">craft.</span></h2>
+      <p class="lede" data-r="3">If it runs every day, the output has to be reliably good. That's what earns more care up front — a throwaway prompt won't survive a hundred runs.</p>
+    </div>
+  </section>
+
+  <!-- 7 DEEP DIVE GOAL -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">deep dive · daily standup</div>
+      <h2 class="head" data-r="2">Build a standup that<br><span class="hl">writes itself.</span></h2>
+      <div class="plan-map" data-r="3">
+        <div class="plan-stage dark">
+          <div class="tag">look back</div>
+          <h3>Catalog yesterday</h3>
+          <p>Everything I touched — meetings, threads, docs, decisions — gathered without me retracing my own steps.</p>
+        </div>
+        <div class="plan-stage">
+          <div class="tag">look ahead</div>
+          <h3>Suggest today</h3>
+          <p>A short, opinionated take on what I should pick up next, grounded in what I said I'd do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 THREE WAYS TO START -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">getting started</div>
+      <h2 class="head" data-r="2">Three ways to <span class="hl">get unstuck.</span></h2>
+      <div class="grid g3">
+        <div class="cardx" data-r="3"><div class="tag">lazy</div><h3>Just ask</h3><p>“Write me a skill to draft my standup daily. Ask me everything you need to know.” Fully endorsed — it's the fastest way to start.</p></div>
+        <div class="cardx tint" data-r="4"><div class="tag">lazy + rigorous</div><h3>Make it grill you</h3><p>Add a pre-built skill like <span class="mono">/grill-me</span> so Claude interrogates the plan before writing a line.</p></div>
+        <div class="cardx" data-r="5"><div class="tag">from examples</div><h3>Start from the past</h3><p>“Read my last two weeks of standups first, then ask what's missing.” Claude imitates good examples well.</p></div>
+      </div>
+      <p class="foot" data-r="6">All three get you surprisingly far. The catch with <span class="ital">just ask</span>: Claude is eager, so it tends to under-ask before diving in.</p>
+    </div>
+  </section>
+
+  <!-- 9 BRAIN DUMP -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap two">
+      <div>
+        <div class="kicker" data-r="1">when you have opinions</div>
+        <h2 class="head" data-r="2">Or brain-dump first,<br>then fill the <span class="hl">gaps.</span></h2>
+        <p class="lede" data-r="3">When you already know what you want, lead with it. Dump your specifics, then have Claude question you to surface everything you left out.</p>
+      </div>
+      <div class="big-num ring" data-r="4">01</div>
+    </div>
+  </section>
+
+  <!-- 10 MAP THE SOURCES -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">map the work</div>
+      <h2 class="head" data-r="2">Find where the work<br><span class="hl">already lives.</span></h2>
+      <p class="lede" data-r="2">We're remote, so everything leaves a written trail. Point Claude at every place that trail shows up.</p>
+      <div class="logos" data-r="3">
+        <div class="logo"><img src="https://cdn.simpleicons.org/googlecalendar" onerror="this.remove()" alt=""><span>Calendar · meetings</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/slack" onerror="this.remove()" alt=""><span>Slack · DMs &amp; output</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/gmail" onerror="this.remove()" alt=""><span>Gmail · external</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/notion/000000" onerror="this.remove()" alt=""><span>Notion · docs &amp; notes</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/googledrive" onerror="this.remove()" alt=""><span>Drive · docs</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/figma" onerror="this.remove()" alt=""><span>Figma · designs</span></div>
+        <div class="logo"><img src="https://cdn.simpleicons.org/linear/5E6AD2" onerror="this.remove()" alt=""><span>Linear · issues</span></div>
+        <div class="logo more">+ more</div>
+      </div>
+      <p class="foot" data-r="4">Tedious for a human, trivial for Claude — though it still can't always read comments (Figma, for one).</p>
+    </div>
+  </section>
+
+  <!-- 11 THE PROMPT -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">the prompt</div>
+      <h2 class="head" data-r="2">One brief, <span class="hl">everything wired in.</span></h2>
+      <div class="promptbox" data-r="3">
+        <div class="tag">prompt.md</div>
+        <p class="key">Help me write a prompt Claude can trigger daily to draft my standup.</p>
+        <p>Match my past standups in the <span class="mono">#product</span> “Daily standup time” thread — Claude learns best from good examples.</p>
+        <p>Read my last five standups, paying special attention to yesterday's “what I'll do today.”</p>
+        <p>Pull from Google Calendar, my Slack DMs / mentions / links, Notion &amp; Drive docs, the occasional Gmail, and the “Stu's Meetings” Notion database. Skip weekends and days I'm out of office.</p>
+        <p>Output a Slack message to me, linking each item to its doc, Figma file, or thread. Hard-code the channel and database IDs so it runs fast.</p>
+        <p>Save the prompt as a <span class="mono">.md</span> file in this folder.</p>
+        <p class="key">Before you start, ask me as many clarifying questions as you need.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 ANATOMY -->
+  <section class="slide" data-sec="Prompt">
+    <div class="wrap">
+      <div class="kicker" data-r="1">anatomy</div>
+      <h2 class="head" data-r="2">What a good recurring<br>prompt <span class="hl">carries.</span></h2>
+      <div class="grid g3">
+        <div class="cardx" data-r="3"><div class="tag">1 · intent</div><h3>Stated twice</h3><p>Open and close with what you actually want out of it.</p></div>
+        <div class="cardx tint" data-r="3"><div class="tag">2 · examples</div><h3>Something to imitate</h3><p>Point at past work so it matches your format and voice.</p></div>
+        <div class="cardx" data-r="4"><div class="tag">3 · output</div><h3>Format &amp; destination</h3><p>Say what it produces and exactly where it lands.</p></div>
+        <div class="cardx" data-r="4"><div class="tag">4 · sources</div><h3>Where to look</h3><p>Every place the data lives, and what to look for in each.</p></div>
+        <div class="cardx tint" data-r="5"><div class="tag">5 · guardrails</div><h3>What to skip</h3><p>Weekends, OOO days, noise that shouldn't show up.</p></div>
+        <div class="cardx dark" data-r="5"><div class="tag">6 · questions</div><h3>“Ask me first”</h3><p>Force clarifying questions before it ever runs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 KEEP IT IN A FILE -->
+  <section class="slide" data-sec="Iterate">
+    <div class="wrap">
+      <div class="kicker" data-r="1">keep it iterable</div>
+      <h2 class="head" data-r="2">Put the prompt in a <span class="hl">file.</span></h2>
+      <div class="flow" data-r="3">
+        <div class="node dark">Scheduled Task<small>“run prompt.md”</small></div>
+        <span class="arrow">→</span>
+        <div class="node">prompt.md<small>the real instructions</small></div>
+        <span class="arrow">→</span>
+        <div class="node ghost">Claude<small>runs it on cadence</small></div>
+      </div>
+      <p class="foot" data-r="4">The task body just points at the file. Claude can read and rewrite the prompt over time — and you never lose a past version.</p>
+    </div>
+  </section>
+
+  <!-- 14 JUDGE THE OUTPUT -->
+  <section class="slide" data-sec="Iterate">
+    <div class="wrap">
+      <div class="kicker" data-r="1">the loop</div>
+      <h2 class="head" data-r="2">Judge the <span class="hl">output,</span><br>not the prompt.</h2>
+      <div class="loop-row" data-r="3">
+        <div class="step">Run it</div><span class="arrow">→</span>
+        <div class="step">Read the output</div><span class="arrow">→</span>
+        <div class="step">“Change this, drop that”</div><span class="arrow">→</span>
+        <div class="step">Run again</div><span class="arrow">↺</span>
+      </div>
+      <div class="grid" data-r="4" style="margin-top:30px">
+        <div class="cardx tint"><div class="tag">honestly</div><h3>I don't always read the prompt that runs</h3><p>Once the loop is tight, I steer on the result, not the wording. I mostly don't know what's in the daily prompt — I care that it works.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15 CLOSE -->
+  <section class="slide closing" data-sec="Close">
+    <div class="wrap">
+      <div class="kicker" data-r="1">Homeaglow Offsite · June 2026</div>
+      <h2 class="closing-title" data-r="2">Pick one.<br>Put it on a timer.</h2>
+      <p class="lede" data-r="3">Questions?</p>
+    </div>
+  </section>
+
+</div>
+
+<script src="../../shared/deck.js"></script>
+</body>
+</html>

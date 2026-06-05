@@ -73,6 +73,10 @@ Use `.cardx` for repeated content blocks. Keep titles punchy and body text under
 
 Prefer semantic diagrams over decorative icons. A diagram should answer "what relates to what?" or "what state is this in?" Use icons when they clarify state or role.
 
+### Prompt Block
+
+Use `.promptbox` to show a prompt, brief, or instruction file on a slide. Give it a `.tag` label (for example `prompt.md`) and one paragraph per idea. Mark the leading intent and closing ask with `p.key` so the bookends stand out. Keep it to a single column and distill a long prompt to the parts worth reading at presentation distance.
+
 ### Status Pills
 
 Use state pills for process state: `grilling`, `implementing`, `ready for QA`, `human`, `assisted`, `automated`, and similar. Keep labels short.

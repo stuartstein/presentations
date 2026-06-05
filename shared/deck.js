@@ -27,7 +27,7 @@
 
   /* typing animation */
   const typeEl = document.getElementById('typeword');
-  const TYPE_TEXT = 'Coding.';
+  const TYPE_TEXT = typeEl ? (typeEl.dataset.type || typeEl.textContent).trim() : '';
   const typeSlide = typeEl ? slides.indexOf(typeEl.closest('.slide')) : -1;
   let typeTimer = null;
   let typeLoopTimer = null;
